@@ -7,3 +7,4 @@ flask-jwt-extended
 passlib
 pyjwt<2.10
 flask-migrate
+gunicorn
