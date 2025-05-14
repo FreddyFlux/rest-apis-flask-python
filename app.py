@@ -6,6 +6,7 @@ from flask import Flask
 from flask_smorest import Api
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
+from dotenv import load_dotenv
 
 from db import db
 import models
@@ -20,6 +21,7 @@ from models.blocklist import BlocklistModel
 
 def create_app(db_url=None):
     app = Flask(__name__)
+    load_dotenv()
 
     app.config["PROPAGATE_EXCEPTIONS"] = True # This is to allow the blueprints to raise exceptions
     app.config["API_TITLE"] = "Stores REST API" # This is the title of the API
